@@ -65,19 +65,6 @@ public class GarageImpl implements Garage {
     @Override
     public Car[] findCarsByEngine(double min, double max) {
         return findCarsByPredicate(car -> car.getEngine() >= min && car.getEngine() < max);
-//        Predicate<Car> predicate = new Predicate<Car>() {
-//            @Override
-//            public boolean test(Car car) {
-//                return car.getEngine() >= min && car.getEngine() < max;
-//            }
-//        };
-//        return findCarsByPredicate(predicate);
-//        return findCarsByPredicate(new Predicate<Car>() {
-//            @Override
-//            public boolean test(Car car) {
-//                return car.getEngine() >= min && car.getEngine() < max;
-//            }
-//        });
     }
 
     @Override
