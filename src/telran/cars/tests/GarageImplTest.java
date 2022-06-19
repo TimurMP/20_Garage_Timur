@@ -71,7 +71,7 @@ class GarageImplTest {
     @Test
     void findCarsByEngine() {
         Car[] expected = {speedMotors[0], speedMotors[4]};
-        assertArrayEquals(expected, garage.findCarsByEngine(2d,6d));
+        assertArrayEquals(expected, garage.findCarsByEngine(2d, 6d));
     }
 
     @Test
@@ -83,7 +83,7 @@ class GarageImplTest {
     }
 
     @Test
-    void displayCars(){
+    void displayCars() {
         garage.printCars();
     }
 }

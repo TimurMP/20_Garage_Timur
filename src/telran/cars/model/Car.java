@@ -50,10 +50,10 @@ public class Car {
     public String toString() {
         return
                 "regNumber='" + regNumber + '\'' +
-                ", model='" + model + '\'' +
-                ", company='" + company + '\'' +
-                ", color='" + color + '\'' +
-                ", engine=" + engine;
+                        ", model='" + model + '\'' +
+                        ", company='" + company + '\'' +
+                        ", color='" + color + '\'' +
+                        ", engine=" + engine;
     }
 
 
