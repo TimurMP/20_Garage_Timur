@@ -48,13 +48,12 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return
                 "regNumber='" + regNumber + '\'' +
                 ", model='" + model + '\'' +
                 ", company='" + company + '\'' +
                 ", color='" + color + '\'' +
-                ", engine=" + engine +
-                '}';
+                ", engine=" + engine;
     }
 
 
