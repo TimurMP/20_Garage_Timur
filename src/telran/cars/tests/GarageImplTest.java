@@ -61,10 +61,16 @@ class GarageImplTest {
 
     @Test
     void findCarsByEngine() {
+        Car[] expected = {speedMotors[0], speedMotors[4]};
+        assertArrayEquals(expected, garage.findCarsByEngine(2d,6d));
     }
 
     @Test
     void findCarsByColor() {
+        Car[] expected = {speedMotors[0], speedMotors[2]};
+        assertArrayEquals(expected, garage.findCarsByColor("Red"));
+
+
     }
 
     @Test

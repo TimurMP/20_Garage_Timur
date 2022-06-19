@@ -63,12 +63,25 @@ public class GarageImpl implements Garage {
 
     @Override
     public Car[] findCarsByEngine(double min, double max) {
-        return new Car[0];
+        return findCarsByPredicate(car -> car.getEngine() >= min && car.getEngine() < max);
+//        Predicate<Car> predicate = new Predicate<Car>() {
+//            @Override
+//            public boolean test(Car car) {
+//                return car.getEngine() >= min && car.getEngine() < max;
+//            }
+//        };
+//        return findCarsByPredicate(predicate);
+//        return findCarsByPredicate(new Predicate<Car>() {
+//            @Override
+//            public boolean test(Car car) {
+//                return car.getEngine() >= min && car.getEngine() < max;
+//            }
+//        });
     }
 
     @Override
     public Car[] findCarsByColor(String color) {
-        return new Car[0];
+        return findCarsByPredicate((car) -> car.getColor().equals(color));
     }
 
     @Override
@@ -90,12 +103,18 @@ public class GarageImpl implements Garage {
                 count++;
             }
         }
-        Car[] cars = new Car[count];
-        for (int i = 0, j = 0; j < cars.length; i++) {
+        Car[] cars1 = new Car[count];
+        for (int i = 0, j = 0; j < cars1.length; i++) {
             if (predicate.test(cars[i])) {
-                cars[j++] = cars[i];
+                cars1[j++] = cars[i];
             }
         }
-        return cars;
+
+        for (int i = 0; i < cars1.length; i++) {
+            System.out.println(cars1[i]);
+
+        }
+
+        return cars1;
     }
 }
