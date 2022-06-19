@@ -8,8 +8,9 @@ public class GarageImpl implements Garage {
     int size;
 
 
-
-
+    public GarageImpl(int capacity) {
+        cars = new Car[capacity];
+    }
 
     @Override
     public boolean addCar(Car car) {
