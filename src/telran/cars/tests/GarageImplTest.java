@@ -49,14 +49,23 @@ class GarageImplTest {
 
     @Test
     void findCarByRegNumber() {
+        Car car = garage.findCarByRegNumber("12345A");
+        assertEquals(speedMotors[0], car);
+        assertNull(garage.findCarByRegNumber("1111"));
     }
 
     @Test
     void findCarsByModel() {
+        Car[] expected = {speedMotors[2]};
+        assertArrayEquals(expected, garage.findCarsByModel("Ibiza"));
+
     }
 
     @Test
     void findCarsByCompany() {
+        Car[] expected = {speedMotors[1]};
+        assertArrayEquals(expected, garage.findCarsByCompany("Chevrolet"));
+
     }
 
     @Test

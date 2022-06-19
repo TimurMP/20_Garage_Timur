@@ -45,6 +45,7 @@ public class GarageImpl implements Garage {
     public Car findCarByRegNumber(String regNumber) {
         for (int i = 0; i < size; i++) {
             if (regNumber.equals(cars[i].getRegNumber())) {
+                System.out.println(cars[i]);
                 return cars[i];
             }
         }
@@ -53,12 +54,12 @@ public class GarageImpl implements Garage {
 
     @Override
     public Car[] findCarsByModel(String model) {
-        return new Car[0];
+        return findCarsByPredicate((car) -> car.getModel().equals(model));
     }
 
     @Override
     public Car[] findCarsByCompany(String company) {
-        return new Car[0];
+        return findCarsByPredicate((car) -> car.getCompany().equals(company));
     }
 
     @Override
